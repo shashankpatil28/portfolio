@@ -13,10 +13,7 @@ Built using **HTML, CSS, and JavaScript**, the site is fully responsive across d
 
 ## 🌐 Live Demo  
 
-👉 [Visit Portfolio](https://your-portfolio-link.vercel.app/) *(Replace with your deployed link)*  
-
-![Portfolio Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")  
-![Portfolio Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")  
+👉 [Visit Portfolio](portfolio-livid-beta-50.vercel.app/) *(Replace with your deployed link)*  
 
 ---
 
