@@ -158,3 +158,25 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+//
+// Freelancing Page Tabs Functionality
+//
+const tabButtons = document.querySelectorAll("[data-tab-btn]");
+const tabContents = document.querySelectorAll("[data-tab-content]");
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.tabTarget;
+    const targetContent = document.getElementById(`tab-${targetId}`);
+
+    // Remove active class from all buttons and content
+    tabButtons.forEach(btn => btn.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
+
+    // Add active class to the clicked button and its corresponding content
+    button.classList.add("active");
+    if (targetContent) {
+      targetContent.classList.add("active");
+    }
+  });
+});

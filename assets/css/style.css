@@ -243,6 +243,10 @@ article.active {
   position: relative;
   padding-bottom: 7px;
 }
+.article-title-extra {
+  position: relative;
+  bottom: 10px;
+}
 
 .article-title::after {
   content: "";
@@ -1882,265 +1886,281 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-/* anew add css */
+/*-----------------------------------*\
+  #FREELANCING TABS & HIGHLIGHTS (v2)
+\*-----------------------------------*/
 
-/* for about-text bulletines */
-/* About bullets — theme-aware, round markers */
-/* ---------------------------
-   Freelancing — distinct theme
-   Uses :root color & typography variables
-   --------------------------- */
-
-/* container */
-.freelancing
-{
-  padding: 2rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
-  border-radius: 16px;
-  box-shadow: var(--shadow-2);
-  margin: 1rem 0;
-}
-
-/* heading block */
-.freelancing > header
-{
+.freelance-tabs-nav {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
+  gap: 10px;
+  margin-top: 30px; /* Aligns content with other pages */
+  margin-bottom: 25px;
+  overflow-x: auto;
+  padding-bottom: 15px; /* Space for scrollbar */
+  scroll-behavior: smooth;
 }
 
-.freelancing .article-title
-{
-  background: var(--bg-gradient-jet);
+/* .freelacing-service-headline {
+  font-size: 1.5rem;
+} */
+
+/* Custom Scrollbar for Tabs Nav */
+.freelance-tabs-nav::-webkit-scrollbar {
+  height: 6px;
+}
+.freelance-tabs-nav::-webkit-scrollbar-track {
+  background: var(--jet);
+  border-radius: 10px;
+}
+.freelance-tabs-nav::-webkit-scrollbar-thumb {
+  background: var(--vegas-gold);
+  border-radius: 10px;
+}
+.freelance-tabs-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-yellow-crayola);
+}
+
+
+.freelance-tab-btn {
+  padding: 10px 20px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  color: var(--light-gray-70);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  white-space: nowrap;
+  transition: var(--transition-1);
+}
+
+.freelance-tab-btn:hover {
+  color: var(--white-2);
+  border-color: hsla(0, 0%, 100%, 0.2);
+}
+
+.freelance-tab-btn.active {
+  /* color: var(--smoky-black); */
+  /* background: var(--bg-gradient-yellow-1); */
+  border-color: hsl(45, 100%, 71%);
+  box-shadow: 0 4px 10px hsla(45, 100%, 60%, 0.15);
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.6s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-title {
+  margin-bottom: 8px;
+  background: var(--text-gradient-yellow);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: calc(var(--fs-1) + 2px);
-  letter-spacing: 0.2px;
-  margin: 0;
+  width: max-content;
 }
 
-/* sub-title */
-.freelancing .service-title
-{
-  font-size: var(--fs-3);
-  margin-bottom: 0.9rem;
-  color: var(--light-gray-70);
+.tab-description {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  max-width: 65ch;
+  margin-bottom: 20px;
 }
 
-/* service-list layout */
-.freelancing .service-list
-{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-}
-
-/* service item card */
-.freelancing .service-item
-{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-  border-radius: 12px;
-  padding: 0.9rem;
+.tech-stack {
   display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
-  border: 1px solid rgba(255,255,255,0.03);
-  transition: transform var(--transition-2), box-shadow var(--transition-1), border-color var(--transition-1);
-  transform: translateY(6px);
-  opacity: 0;
-  will-change: transform, opacity;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
 }
 
-/* service icon style */
-.freelancing .service-icon-box img
-{
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-  border-radius: 10px;
-  padding: 6px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
-  box-shadow: var(--shadow-1);
+.tech-stack span {
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  color: var(--orange-yellow-crayola);
+  background: hsla(45, 100%, 72%, 0.08);
+  border: 1px solid hsla(45, 100%, 72%, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
 }
 
-/* text */
-.freelancing .service-item-title
-{
-  margin: 0 0 0.25rem 0;
-  font-size: var(--fs-5);
+.offerings-table h4 {
   color: var(--white-2);
+  font-size: var(--fs-5);
+  margin-bottom: 15px;
 }
 
-.freelancing .service-item-text
-{
-  margin: 0;
+.offerings-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.offerings-table td {
+  padding: 15px;
   font-size: var(--fs-6);
+  border-bottom: 1px solid var(--jet);
+}
+
+.offerings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.offerings-table td:first-child {
+  color: var(--white-2);
+  font-weight: var(--fw-500);
+  width: 35%;
+}
+
+.offerings-table td:last-child {
   color: var(--light-gray-70);
-  line-height: 1.45;
 }
 
-/* hover elevation */
-.freelancing .service-item:hover
-{
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: var(--shadow-5);
-  border-color: rgba(255,255,255,0.06);
+/* Highlights Section */
+.freelance-highlights {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--jet);
 }
 
-/* staggered entrance when page becomes active (page JS toggles .active) */
-.freelancing.active .service-item
-{
-  animation: freelancingFadeUp 0.6s cubic-bezier(.2,.9,.2,1) forwards;
+.highlights-title {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.freelancing.active .service-item:nth-child(1)
-{ animation-delay: 0.06s; }
-.freelancing.active .service-item:nth-child(2)
-{ animation-delay: 0.12s; }
-.freelancing.active .service-item:nth-child(3)
-{ animation-delay: 0.18s; }
-.freelancing.active .service-item:nth-child(4)
-{ animation-delay: 0.24s; }
-.freelancing.active .service-item:nth-child(5)
-{ animation-delay: 0.30s; }
-.freelancing.active .service-item:nth-child(6)
-{ animation-delay: 0.36s; }
-
-/* keyframes */
-@keyframes freelancingFadeUp
-{
-  0%   { transform: translateY(12px) scale(.995); opacity: 0; filter: blur(4px); }
-  60%  { transform: translateY(-2px) scale(1.002); opacity: 1; filter: blur(0); }
-  100% { transform: translateY(0) scale(1); opacity: 1; filter: blur(0); }
+.highlights-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* about-bullets inside freelancing — slightly different look */
-.freelancing .about-bullets
-{
-  padding: 0;
-  margin: 0.6rem 0 0 0;
-  list-style: none;
-  display: block;
-  gap: 0.6rem;
-}
-
-.freelancing .about-bullets li
-{
+.highlight-item {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.45rem 0;
-  font-size: var(--fs-6);
+  align-items: flex-start;
+  gap: 15px;
+  background: var(--onyx);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--jet);
+}
+
+.highlight-item .icon-box {
+  flex-shrink: 0;
+}
+
+.highlight-item .h4 {
+  margin-bottom: 5px;
+}
+
+.highlight-item p {
+  font-size: var(--fs-7);
   color: var(--light-gray-70);
+  line-height: 1.6;
 }
 
-/* round marker — use yellow gradient and subtle border */
-.freelancing .about-bullets li::before
-{
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-image: var(--text-gradient-yellow);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  flex: 0 0 auto;
+/*-----------------------------------*\
+  #FREELANCING CTA SECTION
+\*-----------------------------------*/
+
+.freelance-cta {
+  margin-top: 40px;
 }
 
-/* contact CTA row */
-.freelancing .row
-{
-  margin-top: 0.8rem;
+.cta-card {
+  background: var(--bg-gradient-jet);
+  padding: 35px 40px;
+  border-radius: 18px;
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
 }
 
-/* CTA button base */
-.freelancing .form-btn
-{
+.cta-text {
+  flex: 1 1 350px; /* Allows text to take available space */
+}
+
+.cta-title {
+  background: var(--text-gradient-yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--fs-2);
+  margin-bottom: 10px;
+}
+
+.cta-text p {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  max-width: 50ch;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0; /* Prevents buttons from shrinking */
+}
+
+.cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.56rem 0.9rem;
-  border-radius: 10px;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--fs-6);
   font-weight: var(--fw-500);
+  padding: 14px 24px;
+  border-radius: 12px;
   text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: transform var(--transition-1), box-shadow var(--transition-1);
-  box-shadow: 0 6px 18px hsla(0,0%,0%,0.18);
+  transition: var(--transition-1);
 }
 
-/* primary CTA */
-.freelancing .form-btn:first-of-type
-{
-  background: var(--bg-gradient-yellow-1);
-  color: var(--smoky-black);
+.cta-btn ion-icon {
+  font-size: 20px;
 }
 
-/* ghost CTAs */
-.freelancing .form-btn[rel] , .freelancing .form-btn[target]
-{
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.05);
+.cta-btn.primary {
+ background: var(--onyx);
   color: var(--white-2);
+  border: 1px solid var(--jet);
 }
 
-/* hover/focus */
-.freelancing .form-btn:hover,
-.freelancing .form-btn:focus
-{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-4);
-  outline: none;
+.cta-btn.primary:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-3px);
 }
 
-/* small responsive tuning */
-@media (max-width: 820px)
-{
-  .freelancing
-  {
-    padding: 1rem;
+.cta-btn.secondary {
+  background: var(--onyx);
+  color: var(--white-2);
+  border: 1px solid var(--jet);
+}
+
+.cta-btn.secondary:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for the CTA card */
+@media (max-width: 768px) {
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
   }
 
-  .freelancing .article-title
-  {
-    font-size: var(--fs-2);
-  }
-
-  .freelancing .service-list
-  {
-    grid-template-columns: 1fr;
+  .cta-text {
+    margin-bottom: 20px;
   }
 }
-
-/* subtle animated accent line under section title */
-.freelancing .service-title::after
-{
-  content: "";
-  display: block;
-  width: 44px;
-  height: 4px;
-  border-radius: 6px;
-  margin-top: 10px;
-  background-image: var(--bg-gradient-yellow-2);
-  opacity: 0.98;
-  transform-origin: left center;
-  transition: transform var(--transition-2), opacity var(--transition-1);
-}
-
-/* when active, slide the accent */
-.freelancing.active .service-title::after
-{
-  transform: translateX(6px) scaleX(1.02);
-}
-
-/* accessibility: focus-visible */
-.freelancing .form-btn:focus-visible
-{
-  box-shadow: 0 0 0 4px rgba(255,200,70,0.08), var(--shadow-3);
-}
-
-/* small tweak: make links inside freelancing inherit color */
-.freelancing a { color: inherit; text-decoration: none; }
