@@ -89,5 +89,3 @@ Clone the repo and open in your browser:
 ```bash
 # clone the repo
 git clone https://github.com/shashankpatil28/portfolio.git
-
-# open index.html in browser
